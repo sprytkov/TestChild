@@ -7,10 +7,12 @@ git clone https://github.com/sprytkov/TestParent.git
 
 mkdir ./versions
 
-rm -f $TRAVIS_REPO_SLUG
-echo $TRAVIS_COMMIT >> $TRAVIS_REPO_SLUG
+repo_name = `$TRIGGER_REPO | sed 's|[^/]*/||'`
+
+rm -f $repo_name
+echo $TRAVIS_COMMIT >> $repo_name
 
 git add .
 git status
-git commit -m "update vesion $TRAVIS_REPO_SLUG"
-git push 
+git commit -m "update version of $repo_name"
+git push -f 
