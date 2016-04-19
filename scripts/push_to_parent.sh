@@ -9,13 +9,15 @@ cd ./TestParent
 mkdir ./versions
 cd ./versions
 
-TRAVIS_COMMIT="kljhhgjhvghfrh"
-TRAVIS_REPO_SLUG="sprytkov/TestChild"
+#TRAVIS_COMMIT="kljhhgjhvghfrh"
+#TRAVIS_REPO_SLUG="sprytkov/TestChild"
 
 repo_name=`echo $TRAVIS_REPO_SLUG | sed 's|[^/]*/||'`
 
 rm -f $repo_name
 echo $TRAVIS_COMMIT >> $repo_name
+
+ls
 
 git add .
 git status
