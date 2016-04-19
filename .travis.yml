@@ -11,4 +11,5 @@ script:
   - xctool -project TestChild.xcodeproj -scheme TestChild -sdk iphonesimulator -configuration Debug build
 after_success:
   - ./scripts/push_tag.sh
-  - ./scripts/trigger_build.sh
+#  - ./scripts/trigger_build.sh
+  - ./scripts/push_to_parent.sh
