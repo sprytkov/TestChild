@@ -5,9 +5,14 @@ cd ./depend
 
 git clone https://github.com/sprytkov/TestParent.git
 
+cd ./TestParent
 mkdir ./versions
+cd ./versions
 
-repo_name = `$TRIGGER_REPO | sed 's|[^/]*/||'`
+TRAVIS_COMMIT="kljhhgjhvghfrh"
+TRAVIS_REPO_SLUG="sprytkov/TestChild"
+
+repo_name=`echo $TRAVIS_REPO_SLUG | sed 's|[^/]*/||'`
 
 rm -f $repo_name
 echo $TRAVIS_COMMIT >> $repo_name
