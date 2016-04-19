@@ -14,10 +14,17 @@ cd ./versions
 
 repo_name=`echo $TRAVIS_REPO_SLUG | sed 's|[^/]*/||'`
 
+ls
+
 rm -f $repo_name
+
+ls
+
 echo $TRAVIS_COMMIT >> $repo_name
 
 ls
+
+cat $repo_name
 
 git add .
 git status
